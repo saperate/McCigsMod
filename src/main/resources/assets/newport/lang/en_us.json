@@ -1,0 +1,15 @@
+{
+  "category.newport": "Newport",
+
+  "item.newport.newport_creative_packet": "Creative Newport Packet",
+  "item.newport.newport_packet": "Newport Packet",
+  "item.newport.newport_packet.tooltip": "Cigs left: %d",
+  
+  "item.newport.newport_cig_0": "Newport Cig",
+  "item.newport.newport_cig_1": "Lit Newport Cig",
+  "item.newport.newport_cig_2": "Lit Newport Cig",
+  "item.newport.newport_cig_3": "Lit Newport Cig",
+
+  "item.newport.cig_banner_pattern": "Cig Banner Pattern",
+  "item.newport.cig_banner_pattern.desc": "Show your allegiance to the smoke nation!!"
+}

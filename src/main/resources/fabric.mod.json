@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "newport",
+  "version": "${version}",
+  "name": "Newport",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/newport/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.saperate.newport.client.NewportDataGenerator"
+    ],
+    "client": [
+      "dev.saperate.newport.client.NewportClient"
+    ],
+    "main": [
+      "dev.saperate.newport.Newport"
+    ]
+  },
+  "mixins": [
+    "newport.mixins.json",
+    {
+      "config": "newport.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

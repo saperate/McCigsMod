@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "C": {
+            "item": "newport:newport_cig_0"
+        },
+        "P": {
+            "item": "minecraft:paper"
+        },
+        "W": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "pattern": [
+        "PPP",
+        "WCW",
+        "WWW"
+    ],
+    "result": {
+        "item": "newport:newport_packet"
+    },
+    "show_notification": true
+}
