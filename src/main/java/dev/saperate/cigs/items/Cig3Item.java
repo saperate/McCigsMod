@@ -2,6 +2,7 @@ package dev.saperate.cigs.items;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -22,7 +23,12 @@ public class Cig3Item extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if(!user.isSubmergedInWater()){
+        if(user.isSneaking()){
+            if(user.getInventory().getArmorStack(0) == ItemStack.EMPTY){
+                user.getInventory().setStack(PlayerInventory.HELMET_SLOTS[0], user.getStackInHand(hand));
+                user.setStackInHand(hand, ItemStack.EMPTY);
+            }
+        }else if(!user.isSubmergedInWater()){
             user.setStackInHand(hand, ItemStack.EMPTY);
             CigItems.coolDownCigs(user, 20);
             smokeCig(world, user);

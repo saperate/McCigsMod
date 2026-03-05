@@ -20,7 +20,7 @@
 		},
 		"head": {
 			"rotation": [0, -60, 60],
-			"translation": [-2, -5.5, -8],
+			"translation": [-2, -5.25, -8],
 			"scale": [0.4, 0.4, 0.73]
 		}
 	}

@@ -8,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
@@ -33,7 +34,12 @@ public class Cig0Item extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {//TODO cough randomly
-        if(!user.isSubmergedInWater()){
+        if(user.isSneaking()){
+            if(user.getInventory().getArmorStack(0) == ItemStack.EMPTY){
+                user.getInventory().setStack(PlayerInventory.HELMET_SLOTS[0], user.getStackInHand(hand));
+                user.setStackInHand(hand, ItemStack.EMPTY);
+            }
+        }else if(!user.isSubmergedInWater()){
             user.setStackInHand(hand, CigItems.CIG_ITEM_1.getDefaultStack());
             CigItems.coolDownCigs(user, 20);
             smokeCig(world, user);
