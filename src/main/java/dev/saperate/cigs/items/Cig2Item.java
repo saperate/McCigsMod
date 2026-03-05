@@ -1,6 +1,7 @@
 package dev.saperate.cigs.items;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
@@ -25,8 +26,8 @@ public class Cig2Item extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if(user.isSneaking()){
             if(user.getInventory().getArmorStack(0) == ItemStack.EMPTY){
-                user.getInventory().setStack(PlayerInventory.HELMET_SLOTS[0], user.getStackInHand(hand));
-                user.setStackInHand(hand, ItemStack.EMPTY);
+                user.equipStack(EquipmentSlot.HEAD, user.getStackInHand(hand));
+                return TypedActionResult.success(ItemStack.EMPTY, world.isClient());
             }
         }else if(!user.isSubmergedInWater()){
             user.setStackInHand(hand, CigItems.CIG_ITEM_3.getDefaultStack());

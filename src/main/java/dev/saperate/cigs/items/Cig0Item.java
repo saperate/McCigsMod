@@ -4,6 +4,7 @@ import dev.saperate.cigs.misc.CigsSounds;
 import dev.saperate.cigs.utils.SapsUtils;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -36,8 +37,8 @@ public class Cig0Item extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {//TODO cough randomly
         if(user.isSneaking()){
             if(user.getInventory().getArmorStack(0) == ItemStack.EMPTY){
-                user.getInventory().setStack(PlayerInventory.HELMET_SLOTS[0], user.getStackInHand(hand));
-                user.setStackInHand(hand, ItemStack.EMPTY);
+                user.equipStack(EquipmentSlot.HEAD, user.getStackInHand(hand));
+                return TypedActionResult.success(ItemStack.EMPTY, world.isClient());
             }
         }else if(!user.isSubmergedInWater()){
             user.setStackInHand(hand, CigItems.CIG_ITEM_1.getDefaultStack());
