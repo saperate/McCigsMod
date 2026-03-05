@@ -3,9 +3,11 @@
   "id": "cigs",
   "version": "${version}",
   "name": "Mc Cigs",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "description": "Adds cigarettes and all their nasty effects to minecraft (joke mod)",
+  "authors": ["Saperate"],
+  "contact": {
+    "Discord" : "@Saperate"
+  },
   "license": "All-Rights-Reserved",
   "icon": "assets/cigs/icon.png",
   "environment": "*",
