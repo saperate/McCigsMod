@@ -59,7 +59,6 @@ public class CigsPacketItem extends Item {
                 }
 
             }
-            player.getItemCooldownManager().set(CigItems.PACKET_ITEM, 1);
             return true;
         }
     }
@@ -80,7 +79,6 @@ public class CigsPacketItem extends Item {
                 }
 
             }
-            player.getItemCooldownManager().set(CigItems.PACKET_ITEM, 1);
             return true;
         }
     }
