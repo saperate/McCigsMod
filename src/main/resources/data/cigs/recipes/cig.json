@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "G": {
+            "item": "minecraft:gunpowder"
+        },
+        "P": {
+            "item": "minecraft:paper"
+        }
+    },
+    "pattern": [
+        " G ",
+        " P ",
+        " P "
+    ],
+    "result": {
+        "item": "cigs:cig_0"
+    },
+    "show_notification": true
+}

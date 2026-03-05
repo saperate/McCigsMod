@@ -1,0 +1,30 @@
+{
+  "category.cigs": "Cigs",
+
+  "item.cigs.creative_packet": "Creative Cig Packet",
+  "item.cigs.packet": "Cig Packet",
+  "item.cigs.packet.tooltip": "Cigs left: %d",
+  
+  "item.cigs.cig_0": "Cig",
+  "item.cigs.cig_1": "Lit Cig",
+  "item.cigs.cig_2": "Lit Cig",
+  "item.cigs.cig_3": "Lit Cig",
+
+  "item.cigs.cig_banner_pattern": "Cig Banner Pattern",
+  "item.cigs.cig_banner_pattern.desc": "Show your allegiance to the smoke nation!!",
+  "block.minecraft.banner.cigs.cig.white" : "White Cig",
+  "block.minecraft.banner.cigs.cig.black" : "Black Cig",
+  "block.minecraft.banner.cigs.cig.gray" : "Gray Cig",
+  "block.minecraft.banner.cigs.cig.brown" : "Brown Cig",
+  "block.minecraft.banner.cigs.cig.orange" : "Orange Cig",
+  "block.minecraft.banner.cigs.cig.yellow" : "Yellow Cig",
+  "block.minecraft.banner.cigs.cig.red" : "Red Cig",
+  "block.minecraft.banner.cigs.cig.lime" : "Lime Cig",
+  "block.minecraft.banner.cigs.cig.green" : "Green Cig",
+  "block.minecraft.banner.cigs.cig.cyan" : "Cyan Cig",
+  "block.minecraft.banner.cigs.cig.light_blue" : "Light Blue Cig",
+  "block.minecraft.banner.cigs.cig.blue" : "Blue Cig",
+  "block.minecraft.banner.cigs.cig.purple" : "Purple Cig",
+  "block.minecraft.banner.cigs.cig.magenta" : "Magenta Cig",
+  "block.minecraft.banner.cigs.cig.pink" : "Pink Cig"
+}

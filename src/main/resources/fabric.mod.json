@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "newport",
+  "id": "cigs",
   "version": "${version}",
-  "name": "Newport",
+  "name": "Mc Cigs",
   "description": "",
   "authors": [],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/newport/icon.png",
+  "icon": "assets/cigs/icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "dev.saperate.newport.client.NewportDataGenerator"
+      "dev.saperate.cigs.CigsDataGenerator"
     ],
     "client": [
-      "dev.saperate.newport.client.NewportClient"
+      "dev.saperate.cigs.CigsClient"
     ],
     "main": [
-      "dev.saperate.newport.Newport"
+      "dev.saperate.cigs.Cigs"
     ]
   },
   "mixins": [
-    "newport.mixins.json",
+    "cigs.mixins.json",
     {
-      "config": "newport.client.mixins.json",
+      "config": "cigs.client.mixins.json",
       "environment": "client"
     }
   ],
