@@ -1,5 +1,7 @@
 package dev.saperate.cigs.items;
 
+import dev.saperate.cigs.data.CigStateDataLoaderSaver;
+import dev.saperate.cigs.data.PlayerData;
 import dev.saperate.cigs.misc.CigsSounds;
 import dev.saperate.cigs.utils.SapsUtils;
 import net.minecraft.client.item.TooltipContext;
@@ -13,6 +15,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
@@ -53,13 +57,26 @@ public class Cig0Item extends Item {
         tooltip.add(Text.of("An unused cigarette"));
     }
 
-    public static void smokeCig(World world, Entity smoker){
+    public static void smokeCig(World world, PlayerEntity smoker){
         if(world.isClient){
             world.playSound(smoker.getX(), smoker.getEyeY(), smoker.getZ(),
                     CigsSounds.SMOKE_SOUND_EVENT, SoundCategory.PLAYERS,
                     0.35f, (1.0f + (world.random.nextFloat() - world.random.nextFloat()) * 0.2f) * 0.5f,
                     true);
             return;
+        }else{
+            smoker.addExhaustion(16);
+            
+            PlayerData plrData = PlayerData.get(smoker);
+            int cigsSmoked = plrData.getCigsSmoked() + 1;
+            plrData.setCigsSmoked(cigsSmoked);
+            
+            float issuesIncreasePercentage = 6;
+            if(cigsSmoked > 16 
+                    && smoker.getRandom().nextFloat() * 100 < issuesIncreasePercentage
+            ){
+                plrData.setRespiratoryIssuesLevel(plrData.getRespiratoryIssuesLevel() + 1);
+            }
         }
         
         
@@ -96,8 +113,6 @@ public class Cig0Item extends Item {
                 ), smoker);
             }
         }
-
-        
         
         
     }
