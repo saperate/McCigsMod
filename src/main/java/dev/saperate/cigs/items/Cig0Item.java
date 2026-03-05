@@ -1,6 +1,8 @@
 package dev.saperate.cigs.items;
 
+import dev.saperate.cigs.Cigs;
 import dev.saperate.cigs.data.CigStateDataLoaderSaver;
+import dev.saperate.cigs.data.CigsConfig;
 import dev.saperate.cigs.data.PlayerData;
 import dev.saperate.cigs.misc.CigsSounds;
 import dev.saperate.cigs.utils.SapsUtils;
@@ -70,12 +72,15 @@ public class Cig0Item extends Item {
             PlayerData plrData = PlayerData.get(smoker);
             int cigsSmoked = plrData.getCigsSmoked() + 1;
             plrData.setCigsSmoked(cigsSmoked);
-            
-            float issuesIncreasePercentage = 6;
-            if(cigsSmoked > 16 
-                    && smoker.getRandom().nextFloat() * 100 < issuesIncreasePercentage
+
+            CigsConfig config = Cigs.getConfig();
+            if(cigsSmoked > config.getNumberOfCigsImmune()
+                    && smoker.getRandom().nextFloat() * 100 < config.getRespiratoryIssuesIncreasePercentage()
             ){
-                plrData.setRespiratoryIssuesLevel(plrData.getRespiratoryIssuesLevel() + 1);
+                plrData.setRespiratoryIssuesLevel(Math.min(
+                        plrData.getRespiratoryIssuesLevel() + 1,
+                        config.getMaxRespiratoryIssuesLevel()
+                        ));
             }
         }
         

@@ -26,5 +26,11 @@
   "block.minecraft.banner.cigs.cig.blue" : "Blue Cig",
   "block.minecraft.banner.cigs.cig.purple" : "Purple Cig",
   "block.minecraft.banner.cigs.cig.magenta" : "Magenta Cig",
-  "block.minecraft.banner.cigs.cig.pink" : "Pink Cig"
+  "block.minecraft.banner.cigs.cig.pink" : "Pink Cig",
+  
+  
+  "text.autoconfig.cigs.option.numberOfCigsImmune" : "Immune for X cigs",
+  "text.autoconfig.cigs.option.respiratoryIssuesIncreasePercentage" : "Side effects increase chance (%)",
+  "text.autoconfig.cigs.option.maxRespiratoryIssuesLevel" : "Max side effects level",
+  "text.autoconfig.cigs.option.respiratoryIssuesWeightMultiplier" : "Side effects weight"
 }

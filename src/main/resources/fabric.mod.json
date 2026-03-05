@@ -20,6 +20,9 @@
     ],
     "main": [
       "dev.saperate.cigs.Cigs"
+    ],
+    "modmenu": [
+      "dev.saperate.cigs.CigsModMenuIntegration"
     ]
   },
   "mixins": [
@@ -32,6 +35,13 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "${minecraft_version}",
+    "cloth-config": "11.*"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ ],
+      "update_checker": true
+    }
   }
 }
